@@ -2,6 +2,8 @@
 **Integrating Human Intent and Cultural Norms into Robotic Path Planning**
 
 ## Abstract
+![Abstract Page: Evolution of Service Robot Navigation](abstract_page-000002.png)
+
 Modern service robots must transcend simple static and dynamic obstacle avoidance. True autonomous navigation requires respecting human intent, cultural norms, and social comfort rather than treating humans as mere moving cylinders [1]. This repository contains the presentation slides and demonstration materials detailing the evolution from traditional global/local planning to true Social Navigation.
 
 ## 1. Introduction: Diagnosing the Navigational Blindspots
