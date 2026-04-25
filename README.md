@@ -1,8 +1,6 @@
 # Beyond Obstacle Avoidance: Social Navigation for Autonomous Robots
 **Integrating Human Intent and Cultural Norms into Robotic Path Planning**
 
-*(Previously: RL-Project: Hospital Social Navigation via SARL / 會「察言觀色」的機器人)*
-
 ## Project Overview (專案介紹)
 This repository contains the presentation slides (PDF format) and video demonstration materials for a project focusing on true social navigation for autonomous robots.
 
@@ -10,20 +8,20 @@ Traditional navigation systems divide path planning into global routes and local
 
 ## The Diagnostic to Cure Framework
 
-### 1. The Symptoms: Evidence of Social Friction
+### 1. Introduction: The Symptoms
 We identified four specific scenarios where traditional geometric optimization creates social friction in human environments:
 - **Late Reaction (Late Sharp Angles):** The robot maintains a straight trajectory until dangerously close to a pedestrian, then executes a sudden, sharp-angle evasion, startling them.
 - **Conversation Disruption (Pass-Between):** The robot navigates directly between two individuals engaged in active conversation, severing their interaction and violating unwritten rules of social space (O-space).
 - **Cultural Misalignment (Pass-Left):** In environments with implicit "Keep Right" norms, the robot aggressively overtakes from the left to pursue the mathematically shortest route, forcing pedestrians into unexpected evasive actions.
 - **Frozen Robot (Traffic Deadlock):** In dense, slow-moving crowds, multiple pedestrian constraints create a mathematically empty intersection (zero safe pathways). The system defaults to zero velocity, paralyzing the robot and causing a severe traffic deadlock.
 
-### 2. The Pathologies: Limitations of Legacy Systems
+### 2. Related Work: The Pathologies
 We deconstructed the mathematical architectures of existing legacy systems to understand their systemic failures:
 - **VO (Velocity Obstacle):** Based on pure geometry. It guarantees mathematical collision avoidance but suffers from infinite, jittery oscillations (Non-Reciprocity), local deadlocks, and sensor hypersensitivity.
 - **ORCA (Optimal Reciprocal Collision Avoidance):** Based on linear programming. It fails due to the *Heterogeneity Problem* (falsely assuming humans follow identical 50/50 reciprocity math) and freezes entirely in dense crowds.
 - **CADRL (Collision Avoidance via Deep Reinforcement Learning):** While DRL produces emergent social norms and anticipation, standard MLPs require fixed input dimensions, creating the *Scalability Crisis* (blindness to the N+1 pedestrian). It also neglects human-human interactions and suffers from reward overfitting.
 
-### 3. The Cure: Attention-Enhanced CADRL
+### 3. Approach: The Cure
 To bridge the gap between mathematical collision avoidance and true social fluidity, we propose a novel **Attention Mechanism** integrated into the CADRL framework:
 - **Dynamic Scalability:** The attention mechanism replaces the fixed-vector constraint of native CADRL. The system can now process an arbitrary number of agents seamlessly.
 - **Contextual Filtering:** Functions exactly like human perception—automatically filtering out background noise to focus computational power on the agents that actually impact the trajectory (Primary Collision Risk).
