@@ -50,7 +50,7 @@ To solve this, we propose an **Attention-Enhanced CADRL**:
 ## Contents (資料清單)
 The repository includes the following core materials:
 
-1. **`Socially_Aware_Robot_Navigation.pdf`** 
+1. **`Attention_Enhanced_Social_Navigation.pdf`** 
    - A comprehensive slide deck exploring the conceptual framework, diagnostic symptoms, comparative algorithmic audits, and the proposed Attention-Enhanced CADRL solution.
 2. **`Socially_Aware_Robot_Navigation.mp4`** 
    - A video demonstration showcasing the trained robot agent navigating dynamically and safely in human environments, illustrating the successful integration of social awareness.
