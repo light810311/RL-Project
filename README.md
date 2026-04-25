@@ -1,28 +1,41 @@
-# RL-Project: Hospital Social Navigation via SARL
-**會「察言觀色」的機器人 - 社交感知強化學習在醫院導航的應用**
+# Beyond Obstacle Avoidance: Social Navigation for Autonomous Robots
+**Integrating Human Intent and Cultural Norms into Robotic Path Planning**
+
+*(Previously: RL-Project: Hospital Social Navigation via SARL / 會「察言觀色」的機器人)*
 
 ## Project Overview (專案介紹)
-This repository contains the report and demonstration materials for the project **"Hospital Social Navigation via SARL"**. 
+This repository contains the presentation slides (PDF format) and video demonstration materials for a project focusing on true social navigation for autonomous robots.
 
-The project focuses on applying Deep Reinforcement Learning (DRL) techniques, specifically **Socially Aware Reinforcement Learning (SARL)**, to enable autonomous robots to navigate seamlessly through highly dynamic and crowded environments like hospitals. 
+Traditional navigation systems divide path planning into global routes and local dynamic obstacle avoidance—optimizing purely for the shortest time and distance, explicitly treating humans as moving obstacles (**The Geometric Paradigm**). This project advocates for **The Social Imperative**: true social navigation requires robots to respect human intent, cultural norms, and invisible social boundaries. Bypassing social rules in favor of mathematical efficiency leads to systemic failures in real-world human environments.
 
-The primary goal is to develop a robot that can "Read the Room" (會「察言觀色」的機器人)—understanding human trajectories, personal spaces, and social norms to avoid collisions and navigate efficiently without causing discomfort to surrounding pedestrians.
+## The Diagnostic to Cure Framework
+
+### 1. The Symptoms: Evidence of Social Friction
+We identified four specific scenarios where traditional geometric optimization creates social friction in human environments:
+- **Late Reaction (Late Sharp Angles):** The robot maintains a straight trajectory until dangerously close to a pedestrian, then executes a sudden, sharp-angle evasion, startling them.
+- **Conversation Disruption (Pass-Between):** The robot navigates directly between two individuals engaged in active conversation, severing their interaction and violating unwritten rules of social space (O-space).
+- **Cultural Misalignment (Pass-Left):** In environments with implicit "Keep Right" norms, the robot aggressively overtakes from the left to pursue the mathematically shortest route, forcing pedestrians into unexpected evasive actions.
+- **Frozen Robot (Traffic Deadlock):** In dense, slow-moving crowds, multiple pedestrian constraints create a mathematically empty intersection (zero safe pathways). The system defaults to zero velocity, paralyzing the robot and causing a severe traffic deadlock.
+
+### 2. The Pathologies: Limitations of Legacy Systems
+We deconstructed the mathematical architectures of existing legacy systems to understand their systemic failures:
+- **VO (Velocity Obstacle):** Based on pure geometry. It guarantees mathematical collision avoidance but suffers from infinite, jittery oscillations (Non-Reciprocity), local deadlocks, and sensor hypersensitivity.
+- **ORCA (Optimal Reciprocal Collision Avoidance):** Based on linear programming. It fails due to the *Heterogeneity Problem* (falsely assuming humans follow identical 50/50 reciprocity math) and freezes entirely in dense crowds.
+- **CADRL (Collision Avoidance via Deep Reinforcement Learning):** While DRL produces emergent social norms and anticipation, standard MLPs require fixed input dimensions, creating the *Scalability Crisis* (blindness to the N+1 pedestrian). It also neglects human-human interactions and suffers from reward overfitting.
+
+### 3. The Cure: Attention-Enhanced CADRL
+To bridge the gap between mathematical collision avoidance and true social fluidity, we propose a novel **Attention Mechanism** integrated into the CADRL framework:
+- **Dynamic Scalability:** The attention mechanism replaces the fixed-vector constraint of native CADRL. The system can now process an arbitrary number of agents seamlessly.
+- **Contextual Filtering:** Functions exactly like human perception—automatically filtering out background noise to focus computational power on the agents that actually impact the trajectory (Primary Collision Risk).
+- **Decoding Social Bonds:** Attention allows the network to model not just Robot-Human interactions, but *Human-Human* interactions, preventing the disruption of social groups and conversation links.
 
 ## Contents (資料清單)
 The repository includes the following core materials:
 
 1. **`Socially_Aware_Robot_Navigation.pdf`** 
-   - A detailed document/report exploring the methodologies, model architecture (SARL), simulation environment details, and performance evaluations of the reinforcement learning approach.
+   - A comprehensive slide deck exploring the conceptual framework, diagnostic symptoms, comparative pathologies of legacy systems, and the proposed Attention-Enhanced CADRL solution.
 2. **`Social Navigation.mp4`** 
-   - A video demonstration showcasing the trained robot agent in action. It illustrates how the robot perceives moving pedestrians, adapts its trajectory dynamically, and reaches its goals in a socially compliant manner.
-
-## Key Concepts (核心技術概念)
-- **Reinforcement Learning (強化學習):** The robot acts as an agent learning to map sensory states (its own kinematics and observed pedestrians) to actions (steering and speed adjustments) to maximize cumulative rewards over time.
-- **Socially Aware Navigation (社交感知導航):** Incorporates social constraints, such as maintaining a comfortable proxemic distance from pedestrians and anticipating human-human interactions to ensure safe passage.
-- **SARL (Socially Aware Reinforcement Learning):** An advanced architecture that uses attention mechanisms or spatial pooling models to effectively capture collective human interactions and predict intent.
-
-## Motivation & Application (動機與應用場景)
-Hospitals present particularly challenging scenarios for autonomous platforms due to the presence of vulnerable patients, fast-moving medical staff, and narrow corridors. Navigating these spaces requires more than just obstacle avoidance—it requires social intelligence. This project demonstrates a robust solution enabling a robot to adhere to implicit human behavioral rules, making autonomous hospital delivery, patrol, or assistance tasks smoother and safer.
+   - A video demonstration showcasing the trained robot agent navigating dynamically and safely in human environments, illustrating the successful integration of social awareness.
 
 ---
 **Repository Owner:** [light810311](https://github.com/light810311)
