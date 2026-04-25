@@ -1,37 +1,55 @@
-# Beyond Obstacle Avoidance: Social Navigation for Autonomous Robots
+# Social Navigation: Human-Centric Path Planning and Avoidance
 **Integrating Human Intent and Cultural Norms into Robotic Path Planning**
 
-## Project Overview (專案介紹)
-This repository contains the presentation slides (PDF format) and video demonstration materials for a project focusing on true social navigation for autonomous robots.
+## Abstract
+Modern service robots must transcend simple static and dynamic obstacle avoidance. True autonomous navigation requires respecting human intent, cultural norms, and social comfort rather than treating humans as mere moving cylinders [1]. This repository contains the presentation slides and demonstration materials detailing the evolution from traditional global/local planning to true Social Navigation.
 
-Traditional navigation systems divide path planning into global routes and local dynamic obstacle avoidance—optimizing purely for the shortest time and distance, explicitly treating humans as moving obstacles (**The Geometric Paradigm**). This project advocates for **The Social Imperative**: true social navigation requires robots to respect human intent, cultural norms, and invisible social boundaries. Bypassing social rules in favor of mathematical efficiency leads to systemic failures in real-world human environments.
+## 1. Introduction: Diagnosing the Navigational Blindspots
+We identified four specific scenarios where traditional geometric optimization creates social friction in human environments. Each scenario highlights a critical failure in legacy navigation logic, supported by foundational research:
 
-## The Diagnostic to Cure Framework
+- **Scenario 1: Late Reaction (Late Sharp Angles)**
+  The robot maintains a straight trajectory until mathematically necessary, resulting in startling, abrupt maneuvers.
+  *Matched Paper:* Chen et al. (IROS, 2017) - Socially Aware Motion Planning with Deep Reinforcement Learning (criticism of ORCA's myopic logic).
 
-### 1. Introduction: The Symptoms
-We identified four specific scenarios where traditional geometric optimization creates social friction in human environments:
-- **Late Reaction (Late Sharp Angles):** The robot maintains a straight trajectory until dangerously close to a pedestrian, then executes a sudden, sharp-angle evasion, startling them.
-- **Conversation Disruption (Pass-Between):** The robot navigates directly between two individuals engaged in active conversation, severing their interaction and violating unwritten rules of social space (O-space).
-- **Cultural Misalignment (Pass-Left):** In environments with implicit "Keep Right" norms, the robot aggressively overtakes from the left to pursue the mathematically shortest route, forcing pedestrians into unexpected evasive actions.
-- **Frozen Robot (Traffic Deadlock):** In dense, slow-moving crowds, multiple pedestrian constraints create a mathematically empty intersection (zero safe pathways). The system defaults to zero velocity, paralyzing the robot and causing a severe traffic deadlock.
+- **Scenario 2: Conversation Disruption (Pass-Between)**
+  The robot passes directly between two interacting individuals, severely disrupting their conversation and violating social spaces (O-space).
+  *Matched Paper:* Alami et al. (ASAMA, 2006) - Sociable Robot Navigation in Human Environments (defining respect for social spaces).
 
-### 2. Related Work: The Pathologies
-We deconstructed the mathematical architectures of existing legacy systems to understand their systemic failures:
-- **VO (Velocity Obstacle):** Based on pure geometry. It guarantees mathematical collision avoidance but suffers from infinite, jittery oscillations (Non-Reciprocity), local deadlocks, and sensor hypersensitivity.
-- **ORCA (Optimal Reciprocal Collision Avoidance):** Based on linear programming. It fails due to the *Heterogeneity Problem* (falsely assuming humans follow identical 50/50 reciprocity math) and freezes entirely in dense crowds.
-- **CADRL (Collision Avoidance via Deep Reinforcement Learning):** While DRL produces emergent social norms and anticipation, standard MLPs require fixed input dimensions, creating the *Scalability Crisis* (blindness to the N+1 pedestrian). It also neglects human-human interactions and suffers from reward overfitting.
+- **Scenario 3: Cultural Misalignment (Pass-Left)**
+  Violating implicit norms like "Keep Right," leading to awkward passes and broken traffic flow. Pure geometry cannot encode these socio-cultural norms.
+  *Matched Paper:* Chen et al. (IROS, 2017) - Socially Aware Motion Planning with Deep Reinforcement Learning.
 
-### 3. Approach: The Cure
-To bridge the gap between mathematical collision avoidance and true social fluidity, we propose a novel **Attention Mechanism** integrated into the CADRL framework:
-- **Dynamic Scalability:** The attention mechanism replaces the fixed-vector constraint of native CADRL. The system can now process an arbitrary number of agents seamlessly.
-- **Contextual Filtering:** Functions exactly like human perception—automatically filtering out background noise to focus computational power on the agents that actually impact the trajectory (Primary Collision Risk).
-- **Decoding Social Bonds:** Attention allows the network to model not just Robot-Human interactions, but *Human-Human* interactions, preventing the disruption of social groups and conversation links.
+- **Scenario 4: Frozen Robot (Traffic Deadlock)**
+  In dense crowds, multiple half-plane constraints intersect to form an empty set, causing the algorithm to calculate no safe speed and default to zero.
+  *Matched Paper:* Trautman & Krause (IROS, 2010) - Unfreezing the Robot: Navigation in Dense, Interacting Crowds.
+
+## 2. Related Work: The Algorithmic Audit
+We deconstructed the mathematical architectures of existing legacy systems to understand their systemic bottlenecks:
+
+- **Velocity Obstacle (VO)**
+  *Foundation Paper:* Fiorini & Shiller (ICRA, 1998)
+  *Drawbacks:* Non-reciprocity leads to severe oscillation in symmetrical encounters. Highly sensitive to sensor noise, causing erratic movements [11, 12].
+
+- **Optimal Reciprocal Collision Avoidance (ORCA)**
+  *Foundation Paper:* van den Berg et al. (2011)
+  *Drawbacks:* The Heterogeneity Problem—humans do not follow mathematical reciprocity (50/50 split), breaching mathematical safety constraints [17, 18].
+
+- **Collision Avoidance with DRL (CADRL)**
+  *Foundation Papers:* Chen et al. (ICRA/IROS, 2017)
+  *Drawbacks:* Severe scalability issues in dense crowds due to fixed input vector sizes (information loss). Fails to model complex human-human interactions [23, 24].
+
+## 3. Approach: The Attention-Enhanced Solution
+While CADRL successfully encodes social norms, **Dense Crowd Scalability & Interaction** remains the final unsolved frontier (The Algorithmic Gap).
+
+To solve this, we propose an **Attention-Enhanced CADRL**:
+- **Core Proposal:** Integrate an Attention mechanism into the CADRL framework to solve the fundamental scalability and dense crowd interaction gaps [25].
+- **Mechanism of Action:** Attention dynamically weights the importance of all surrounding agents without fixed input limits. It proactively identifies critical human-human pairs, completely bypassing the fixed-input information loss bottleneck.
 
 ## Contents (資料清單)
 The repository includes the following core materials:
 
 1. **`Socially_Aware_Robot_Navigation.pdf`** 
-   - A comprehensive slide deck exploring the conceptual framework, diagnostic symptoms, comparative pathologies of legacy systems, and the proposed Attention-Enhanced CADRL solution.
+   - A comprehensive slide deck exploring the conceptual framework, diagnostic symptoms, comparative algorithmic audits, and the proposed Attention-Enhanced CADRL solution.
 2. **`Socially_Aware_Robot_Navigation.mp4`** 
    - A video demonstration showcasing the trained robot agent navigating dynamically and safely in human environments, illustrating the successful integration of social awareness.
 
