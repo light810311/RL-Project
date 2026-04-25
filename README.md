@@ -2,7 +2,7 @@
 **會「察言觀色」的機器人 - 社交感知強化學習在醫院導航的應用**
 
 ## Project Overview (專案介紹)
-This repository contains the presentation, report, and demonstration materials for the project **"Hospital Social Navigation via SARL"**. 
+This repository contains the report and demonstration materials for the project **"Hospital Social Navigation via SARL"**. 
 
 The project focuses on applying Deep Reinforcement Learning (DRL) techniques, specifically **Socially Aware Reinforcement Learning (SARL)**, to enable autonomous robots to navigate seamlessly through highly dynamic and crowded environments like hospitals. 
 
@@ -11,11 +11,9 @@ The primary goal is to develop a robot that can "Read the Room" (會「察言觀
 ## Contents (資料清單)
 The repository includes the following core materials:
 
-1. **`Hospital_Social_Navigation_via_SARL.pdf`** 
+1. **`Socially_Aware_Robot_Navigation.pdf`** 
    - A detailed document/report exploring the methodologies, model architecture (SARL), simulation environment details, and performance evaluations of the reinforcement learning approach.
-2. **`Hospital_Social_Navigation_via_SARL.pptx`** 
-   - The presentation slides used for explaining the project. It covers the motivation, RL formulation (states, actions, reward functions), and visualizes the experimental findings.
-3. **`會「察言觀色」的機器人.mp4`** 
+2. **`Social Navigation.mp4`** 
    - A video demonstration showcasing the trained robot agent in action. It illustrates how the robot perceives moving pedestrians, adapts its trajectory dynamically, and reaches its goals in a socially compliant manner.
 
 ## Key Concepts (核心技術概念)
