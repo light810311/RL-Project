@@ -32,7 +32,7 @@ The repository includes the following core materials:
 
 1. **`Socially_Aware_Robot_Navigation.pdf`** 
    - A comprehensive slide deck exploring the conceptual framework, diagnostic symptoms, comparative pathologies of legacy systems, and the proposed Attention-Enhanced CADRL solution.
-2. **`Social Navigation.mp4`** 
+2. **`Socially_Aware_Robot_Navigation.mp4`** 
    - A video demonstration showcasing the trained robot agent navigating dynamically and safely in human environments, illustrating the successful integration of social awareness.
 
 ---
