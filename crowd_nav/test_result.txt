@@ -1,0 +1,10 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+2026-05-27 13:40:53, INFO: Using device: cuda:0
+2026-05-27 13:40:53, INFO: Policy: LSTM-RL w/o pairwise interaction module
+2026-05-27 13:40:53, INFO: human number: 5
+2026-05-27 13:40:53, INFO: Not randomize human's radius and preferred speed
+2026-05-27 13:40:53, INFO: Training simulation: circle_crossing, test simulation: circle_crossing
+2026-05-27 13:40:53, INFO: Square width: 10.0, circle width: 4.0
+2026-05-27 13:40:53, INFO: Agent is invisible and has holonomic kinematic constraint

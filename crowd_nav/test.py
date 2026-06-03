@@ -59,9 +59,10 @@ def main():
         policy.get_model().load_state_dict(torch.load(model_weights))
 
     # configure environment
+    from crowd_sim.envs.crowd_sim import CrowdSim
     env_config = configparser.RawConfigParser()
     env_config.read(env_config_file)
-    env = gym.make('CrowdSim-v0')
+    env = CrowdSim()
     env.configure(env_config)
     if args.square:
         env.test_sim = 'square_crossing'

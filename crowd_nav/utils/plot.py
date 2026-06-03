@@ -1,3 +1,4 @@
+import os
 import re
 import argparse
 import matplotlib.pyplot as plt
@@ -22,7 +23,13 @@ def main():
     args = parser.parse_args()
 
     # define the names of the models you want to plot and the longest episodes you want to show
-    models = ['LSTM-RL', 'SARL', 'OM-SARL']
+    models = []
+    for log_file in args.log_files:
+        dir_name = os.path.basename(os.path.dirname(log_file))
+        if dir_name:
+            models.append(dir_name)
+        else:
+            models.append(os.path.basename(log_file))
     max_episodes = 10000
 
     ax1 = ax2 = ax3 = ax4 = None

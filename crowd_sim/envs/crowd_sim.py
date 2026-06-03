@@ -47,6 +47,8 @@ class CrowdSim(gym.Env):
         self.states = None
         self.action_values = None
         self.attention_weights = None
+        self.action_space = gym.spaces.Discrete(1)
+        self.observation_space = gym.spaces.Discrete(1)
 
     def configure(self, config):
         self.config = config
@@ -426,7 +428,7 @@ class CrowdSim(gym.Env):
 
         x_offset = 0.11
         y_offset = 0.11
-        cmap = plt.cm.get_cmap('hsv', 10)
+        cmap = plt.colormaps['hsv'].resampled(10)
         robot_color = 'yellow'
         goal_color = 'red'
         arrow_color = 'red'
@@ -572,7 +574,7 @@ class CrowdSim(gym.Env):
                 # when any key is pressed draw the action value plot
                 fig, axis = plt.subplots()
                 speeds = [0] + self.robot.policy.speeds
-                rotations = self.robot.policy.rotations + [np.pi * 2]
+                rotations = np.append(self.robot.policy.rotations, np.pi * 2)
                 r, th = np.meshgrid(speeds, rotations)
                 z = np.array(self.action_values[global_step % len(self.states)][1:])
                 z = (z - np.min(z)) / (np.max(z) - np.min(z))

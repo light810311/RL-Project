@@ -1,0 +1,14 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+2026-05-27 08:38:46, INFO: Using device: cuda:0
+2026-05-27 08:38:46, INFO: Policy: OM-SARL w/ global state
+2026-05-27 08:38:46, INFO: human number: 5
+2026-05-27 08:38:46, INFO: Not randomize human's radius and preferred speed
+2026-05-27 08:38:46, INFO: Training simulation: circle_crossing, test simulation: circle_crossing
+2026-05-27 08:38:46, INFO: Square width: 10.0, circle width: 4.0
+2026-05-27 08:38:46, INFO: Agent is invisible and has holonomic kinematic constraint
+2026-05-27 09:46:25, INFO: TEST  has success rate: 1.00, collision rate: 0.00, nav time: 10.57, total reward: 0.3368
+2026-05-27 09:46:25, INFO: Frequency of being in danger: 0.02 and average min separate distance in danger: 0.16
+2026-05-27 09:46:25, INFO: Collision cases: 
+2026-05-27 09:46:25, INFO: Timeout cases: 

@@ -1,0 +1,14 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+2026-05-26 22:26:56, INFO: Using device: cpu
+2026-05-26 22:26:56, INFO: human number: 5
+2026-05-26 22:26:56, INFO: Not randomize human's radius and preferred speed
+2026-05-26 22:26:56, INFO: Training simulation: circle_crossing, test simulation: circle_crossing
+2026-05-26 22:26:56, INFO: Square width: 10.0, circle width: 4.0
+2026-05-26 22:26:56, INFO: ORCA agent buffer: 0.000000
+2026-05-26 22:26:56, INFO: Agent is invisible and has holonomic kinematic constraint
+2026-05-26 22:27:01, INFO: TEST  has success rate: 0.43, collision rate: 0.57, nav time: 10.86, total reward: -0.0220
+2026-05-26 22:27:01, INFO: Frequency of being in danger: 0.30 and average min separate distance in danger: 0.08
+2026-05-26 22:27:01, INFO: Collision cases: 0 1 2 5 8 10 11 13 14 16 18 19 20 22 23 24 26 30 34 37 41 42 43 45 51 53 57 59 66 69 70 72 73 80 82 83 85 89 90 91 93 95 97 98 99 100 101 105 106 107 109 111 113 114 115 117 119 127 128 129 131 132 134 136 138 139 140 145 146 147 148 152 153 155 157 159 163 164 165 166 167 170 171 172 174 178 180 184 188 189 190 192 193 194 196 198 199 201 204 205 206 207 208 213 214 215 217 219 220 221 225 227 229 230 231 232 234 235 237 239 240 242 243 247 251 255 256 257 258 259 260 261 262 263 264 265 266 268 271 272 273 274 275 276 279 281 283 284 285 288 289 291 292 295 296 297 298 299 300 302 304 307 309 310 311 312 315 317 319 322 324 327 329 331 333 334 336 337 340 342 343 344 346 347 349 351 352 353 355 357 358 361 362 363 364 365 366 367 368 370 372 374 376 378 379 381 382 383 384 385 386 389 391 393 394 395 400 401 402 403 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 424 425 427 431 432 433 434 437 438 440 442 443 444 445 447 448 449 450 452 453 456 457 458 460 462 463 464 466 467 469 471 473 474 479 481 483 485 486 488 490 492 493 495 496 497 498
+2026-05-26 22:27:01, INFO: Timeout cases: 118 168 224

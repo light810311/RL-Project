@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--resume', default=False, action='store_true')
     parser.add_argument('--gpu', default=False, action='store_true')
     parser.add_argument('--debug', default=False, action='store_true')
+    parser.add_argument('--with_om', type=str, default=None)
     args = parser.parse_args()
 
     # configure paths
@@ -67,13 +68,19 @@ def main():
         parser.error('Policy config has to be specified for a trainable network')
     policy_config = configparser.RawConfigParser()
     policy_config.read(args.policy_config)
+    if args.with_om is not None:
+        policy_config.set(args.policy, 'with_om', args.with_om.lower())
+        # write the updated policy_config to the output directory
+        with open(os.path.join(args.output_dir, 'policy.config'), 'w') as f:
+            policy_config.write(f)
     policy.configure(policy_config)
     policy.set_device(device)
 
     # configure environment
+    from crowd_sim.envs.crowd_sim import CrowdSim
     env_config = configparser.RawConfigParser()
     env_config.read(args.env_config)
-    env = gym.make('CrowdSim-v0')
+    env = CrowdSim()
     env.configure(env_config)
     robot = Robot(env_config, 'robot')
     env.set_robot(robot)
